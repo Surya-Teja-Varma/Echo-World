@@ -63,8 +63,8 @@ const HomePage = () => {
           <div className="flex justify-center py-12">
             <span className="loading loading-spinner loading-lg" />
           </div>
-        ) : !friends || friends.length === 0 ? (
-          <p className="text-center text-gray-500">No friends found.</p>
+        ) : friends.length === 0 ? (
+          <NoFriendsFound />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {friends.map((friend) => (
@@ -72,7 +72,6 @@ const HomePage = () => {
             ))}
           </div>
         )}
-        
 
         <section>
           <div className="mb-6 sm:mb-8">

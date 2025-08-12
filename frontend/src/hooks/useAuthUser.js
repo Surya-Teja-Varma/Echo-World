@@ -8,10 +8,6 @@ const useAuthUser = () => {
     retry: false, // auth check
   });
 
-  return { 
-    isLoading: authUser.isLoading, 
-    authUser: authUser.data?.user,
-    isError: authUser.isError // Expose the error state
-  };
+  return { isLoading: authUser.isLoading, authUser: authUser.data?.user };
 };
 export default useAuthUser;
