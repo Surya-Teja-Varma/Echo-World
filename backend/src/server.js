@@ -15,7 +15,12 @@ const PORT = process.env.PORT;
 
 const __dirname = path.resolve();
 
-app.use(cors({ origin: "https://echoworld.onrender.com", credentials: true, }));
+app.use(
+  cors({
+    origin: "https://your-frontend-url.ondigitalocean.app", 
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
