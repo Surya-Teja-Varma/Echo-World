@@ -1,5 +1,23 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+    {
+      "source": "/api/(.*)",
+      "destination": "/backend/src/server.js"
+    }
+  ],
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend/src/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "installCommand": "npm install --prefix frontend && npm install --prefix backend",
+  "buildCommand": "npm run build --prefix frontend"
 }
